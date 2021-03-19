@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zeiterfassung.TimeEntriesPage"
+              BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid BackgroundColor="CornflowerBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label 
+                        VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Datum"
+                        TextColor="White"
+                        HorizontalOptions="Start"/>
+                <Label 
+                         VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Von"
+                        TextColor="White"
+                        HorizontalOptions="Start"/>
+                <Label 
+                        VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Bis"
+                        TextColor="White"
+                        HorizontalOptions="Start"/>
+                <Label 
+                         VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Duur"
+                        TextColor="White"
+                        HorizontalOptions="Start"/>
+                <Label 
+                         VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Typ"
+                        TextColor="White"
+                        HorizontalOptions="Start"/>
+                <Label 
+                         VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="5"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Kommentar"
+                        TextColor="White"
+                        HorizontalOptions="Start"/>
+            </Grid>
+            <ListView x:Name="TimeEntryList"
+                      ItemSelected="delete"
+                      RowHeight="35">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell x:Name="{Binding ID}">
+                            <Grid   Margin="2"
+                                    Padding="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"></ColumnDefinition>
+                                    <ColumnDefinition Width="40"></ColumnDefinition>
+                                    <ColumnDefinition Width="40"></ColumnDefinition>
+                                    <ColumnDefinition Width="40"></ColumnDefinition>
+                                    <ColumnDefinition Width="50"></ColumnDefinition>
+                                    <ColumnDefinition Width="80"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                    HorizontalOptions="Start"
+                                    Grid.Row="0"
+                                       Grid.Column="0"
+                                       TextColor="Black"
+                                       Text="{Binding Date}"/>
+                                <Label HorizontalOptions="Start"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       TextColor="Black"
+                                       Text="{Binding TimeIn}"/>
+                                <Label HorizontalOptions="Start"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
+                                       TextColor="Black"
+                                       Text="{Binding TimeOut}"/>
+                                <Label HorizontalOptions="Start"
+                                       Grid.Row="0"
+                                       Grid.Column="3"
+                                       TextColor="Black"
+                                       Text="{Binding Time}"/>
+                                <Label HorizontalOptions="Start"
+                                       Grid.Row="0"
+                                       Grid.Column="4"
+                                       TextColor="Black"
+                                       Text="{Binding Type}"/>
+                                <Label HorizontalOptions="Start"
+                                       Grid.Row="0"
+                                       Grid.Column="5"
+                                       TextColor="Black"
+                                       Text="{Binding Comment}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

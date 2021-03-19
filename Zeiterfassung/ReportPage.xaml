@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zeiterfassung.ReportPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Spacing="5">
+            <Label
+            HorizontalTextAlignment="Center"
+            BackgroundColor="CornflowerBlue"
+            TextColor="White"
+            Text="Uswertig"
+            FontSize="36"/>
+            <Grid BackgroundColor="CornflowerBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label  Grid.Row="0"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text="Gschaffet"
+                        TextColor="White"/>
+                <Label  Grid.Row="0"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text="Soll"
+                        TextColor="White"/>
+                <Label  Grid.Row="0"
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text="Differenz"
+                        TextColor="White"/>
+                <Label  Grid.Row="0"
+                        Grid.Column="3"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text="NF"
+                        TextColor="White"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label  
+                    FontSize="20"
+                    TextColor="Black"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text=""
+                    x:Name="Worked"/>
+                <Label  Grid.Row="0"
+                        Grid.Column="1"
+                        FontSize="20"
+                        TextColor="Black"
+                        x:Name="SollTime"/>
+                <Label  Grid.Row="0"
+                        Grid.Column="2"
+                        FontSize="20"
+                        TextColor="Black"
+                        x:Name="Diff"/>
+                <Label  Grid.Row="0"
+                        Grid.Column="3"
+                         FontSize="20"
+                        TextColor="Black"
+                        Text=""
+                        x:Name="Emergency"/>
+            </Grid>
+            <Image Source="crowley2"/>
+            <Grid VerticalOptions="EndAndExpand"
+                  HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label  Grid.Row="0"
+                        Grid.Column="0"
+                        FontSize="20"
+                        TextColor="Black"
+                        Text="Von: "
+                        VerticalOptions="Center"/>
+                <DatePicker x:Name="StartDatePicked"
+                            Date="11.2020"
+                            FontSize="20"
+                            TextColor="Black"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Format="dd.MM.yy"/>
+                <Label  FontSize="20"
+                        TextColor="Black"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Text="Bis: "
+                        VerticalOptions="Center"/>
+                <DatePicker x:Name="EndDatePicked"
+                            TextColor="Black"
+                            Grid.Row="0" 
+                            FontSize="20"
+                            Grid.Column="3"
+                            Format="dd.MM.yy"/>
+            </Grid>
+            <Label
+                   FontSize="15"
+                   Text="HDL"
+                   TextColor="White"/>
+
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="115"></ColumnDefinition>
+                    <ColumnDefinition Width="115"></ColumnDefinition>
+                    <ColumnDefinition Width="115"></ColumnDefinition>
+                    
+                </Grid.ColumnDefinitions>
+                <Button Padding="0"
+                        Grid.Column="0"
+                        TextColor="White"
+                        BackgroundColor="CornflowerBlue"
+                        Grid.Row="0"
+                        Text="Berechne"
+                        Clicked="calculate"/>
+                <Button Padding="0"
+                        Grid.Column="1"
+                        TextColor="White"
+                        BackgroundColor="CornflowerBlue"
+                        Grid.Row="0"
+                        Text="date lösche"
+                        Clicked="deleteData"/>
+                <Button Padding="0"
+                        TextColor="White"
+                        BackgroundColor="CornflowerBlue"
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        Text="Excel report"
+                        Clicked="report"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zeiterfassung.MainPage"
+             BackgroundColor="White">
+
+    <StackLayout  Spacing="5">
+        
+            <Label
+            HorizontalTextAlignment="Center"
+            BackgroundColor="CornflowerBlue"
+            TextColor="White"
+            Text="ichecke und uschecke"
+            FontSize="36"/>
+
+
+        <Picker 
+            TextColor="Black"
+            x:Name="type"
+            FontSize ="20"
+            Title="Typ der Zeiterfassung">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Normals schaffe</x:String>
+                    <x:String>Notfall</x:String>
+                    <x:String>Meeting</x:String>
+                    <x:String>Wiiterbiudig</x:String>
+            </x:Array>
+            </Picker.ItemsSource>
+            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+        </Picker>
+
+        <Entry
+            TextColor="Black"
+            Placeholder="Kommentar"
+            PlaceholderColor="DarkGray"
+            FontSize ="20"
+            x:Name="comment"/>
+        <Image Source="crowley1.jpg"/>
+        <Grid VerticalOptions="EndAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label
+                TextColor="Black"
+                VerticalTextAlignment="Center"
+                Grid.Column="0"
+                Text="Sollzeit:" 
+                FontSize="20"
+                HorizontalOptions="Center"/>
+            <TimePicker
+                TextColor="Black"
+                Grid.Column="1"
+                Time="08:00" 
+                Format="HH:mm"
+                FontSize="20"
+                x:Name="SollZeit"
+                HorizontalOptions="Center"/>
+        </Grid>
+       
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"></ColumnDefinition>
+                <ColumnDefinition Width="180"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button
+                
+                Grid.Column="0"
+                Text=" Check in"
+                TextColor="Black"
+                FontSize="20"
+                BackgroundColor="Green"
+                x:Name="check_in"
+                Clicked="checkin"
+                HorizontalOptions="CenterAndExpand"/>
+
+            <Button
+                Grid.Column="1"
+                Text=" Check out"
+                TextColor="Black"
+                IsEnabled="False"
+                FontSize="20"
+                BackgroundColor="DodgerBlue"
+                x:Name="check_out"
+                Clicked="checkout"
+                HorizontalOptions="CenterAndExpand"/>
+        </Grid>
+
+      
+    </StackLayout>
+
+</ContentPage>

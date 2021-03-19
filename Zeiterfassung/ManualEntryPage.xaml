@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zeiterfassung.ManualEntryPage"
+              BackgroundColor="White">
+        <StackLayout  Spacing="2">
+            <Label
+                HorizontalTextAlignment="Center"
+                BackgroundColor="CornflowerBlue"
+                TextColor="White"
+                Text="Manuelle Itrag"
+                FontSize="36"/>
+            <Label
+                Text="Datum uswähle"
+                FontSize="20"
+                TextColor="Black"/>
+            <DatePicker
+                FontSize="20"
+                TextColor="Black"
+                x:Name="DatePicked"
+                Format="dd.MM.yyyy"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label
+                    FontSize="20"
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Von"/>
+                <TimePicker
+                    TextColor="Black"
+                    FontSize="20"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="TimeInPicked"
+                    Format="HH:mm"/>
+                <Label
+                    FontSize="20"
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Text="Bis"
+                />
+                <TimePicker
+                    FontSize="20"
+                    TextColor="Black"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    x:Name="TimeOutPicked"
+                    Format="HH:mm"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"></ColumnDefinition>
+                    <ColumnDefinition Width="160"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label
+                    FontSize="20"
+                    TextColor="Black"
+                    Text="Soll Ziit uswähle"
+                    VerticalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+
+                <TimePicker
+                    FontSize="20"
+                    TextColor="Black"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="SollTimePicked"
+                    Time="08:00"
+                    Format="HH:mm"/>
+            </Grid>
+            <Image Source="crowley4.jpg"/>
+            <Picker x:Name="type"
+                    TextColor="Black"
+                    Title="Typ der Zeiterfassung"
+                    FontSize="20">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Normals schaffe</x:String>
+                        <x:String>Notfall</x:String>
+                        <x:String>Meeting</x:String>
+                        <x:String>Wiiterbiudig</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+            <Entry
+                Placeholder="Kommentar"
+                PlaceholderColor="DarkGray"
+                FontSize="20"
+                TextColor="Black"
+                x:Name="comment"/>
+
+            <Button
+                VerticalOptions="EndAndExpand"
+                Text="Iträge"
+                BackgroundColor="CornflowerBlue"
+                Clicked="enterToDB"
+                FontSize="20"
+                TextColor="White"
+                x:Name="DataEntry"
+                />
+        </StackLayout>
+   
+</ContentPage>

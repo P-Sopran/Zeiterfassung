@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zeiterfassung.SollEntriesPage"
+              BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+          
+                <Grid BackgroundColor="CornflowerBlue">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Datum"
+                        TextColor="White"/>
+                    <Label
+                        VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Wuchetag"
+                        TextColor="White"/>
+                    <Label 
+                        VerticalOptions="Center"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Sollziit"
+                        TextColor="White"/>
+                   
+                </Grid>
+
+            <ListView x:Name="SollEntryList"
+                      ItemSelected="delete"
+                      RowHeight="35">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell x:Name="{Binding Date}">
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"></ColumnDefinition>
+                                    <ColumnDefinition Width="100"></ColumnDefinition>
+                                    <ColumnDefinition Width="100"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                    Grid.Row="0"
+                                       Grid.Column="0"
+                                       TextColor="Black"
+                                       Text="{Binding Date}"/>
+                                <Label
+                                    Grid.Row="0"
+                                       Grid.Column="1"
+                                       TextColor="Black"
+                                       Text="{Binding Weekday}"/>
+                                <Label Grid.Row="0"
+                                       Grid.Column="2"
+                                       TextColor="Black"
+                                       Text="{Binding SollString}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
